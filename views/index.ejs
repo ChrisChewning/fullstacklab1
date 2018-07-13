@@ -8,14 +8,14 @@
     <h1>Index Page</h1>
 
     <ul>
-        <% for(let i = 0; i < fruits.length; i++){ %>
+        <% for(let i = 0; i < tvshows.length; i++){ %>
           <li>
-               The <a href="/fruits/<%=fruits[i].id%>"><%=fruits[i].name; %></a> is  <%=fruits[i].color; %>.
+               The <a href="/home/<%=tvshows[i].id%>"><%=tvshows[i].name; %></a> is  <%=tvshows[i].reason; %>.
 
-                <% if(fruits[i].readyToEat === true){ %>
-                  It is ready to eat
+                <% if(tvshows[i].netflixHulu === true){ %>
+                  It is on Netflix or Hulu!!!!!
                 <% } else { %>
-                  It is not ready to eat
+                  It is not on Netflix or Hulu.
                 <% } %>
 
     <form >
@@ -24,13 +24,13 @@
     </form>
 
 
-    <a href ="/fruits/<%=fruits[i].id%>/edit">Edit</a>
+    <a href ="/home/<%=tvshows[i].id%>/edit">Edit</a>
 
 </li>
 <% } %>
 </ul>
 <nav>
-<a href="/fruits/new">Create a New Fruit</a>
+<a href="/home/new">Create a New TV Show for Party Potensh to Watch</a>
 </nav>
 
   </body>
