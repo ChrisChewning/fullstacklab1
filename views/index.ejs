@@ -10,7 +10,11 @@
     <ul>
         <% for(let i = 0; i < tvshows.length; i++){ %>
           <li>
-               The <a href="/home/<%=tvshows[i].id%>"><%=tvshows[i].name; %></a> is  <%=tvshows[i].reason; %>.
+            <!-- not sure why I only need a / here and not /home -->
+               The <a href="/<%=tvshows[i].id%>">
+                 <%=tvshows[i].name; %>
+               </a> is
+               <%=tvshows[i].reason; %>.
 
                 <% if(tvshows[i].netflixHulu === true){ %>
                   It is on Netflix or Hulu!!!!!
@@ -18,19 +22,20 @@
                   It is not on Netflix or Hulu.
                 <% } %>
 
-    <form >
-    <!-- <form method="POST" action="">?_method=POST"> -->
-      <input type="submit" value="" />
+<!-- Delete route  -->
+<form method="POST" action="/<%=tvshows[i].id%>?_method=DELETE">
+  <input type="submit" value="DELETE" />
+      <!-- the value="DELETE" is what you see on the button.  -->
     </form>
 
-
+<!-- Edit Link -->
     <a href ="/home/<%=tvshows[i].id%>/edit">Edit</a>
-
 </li>
 <% } %>
 </ul>
+<!-- Create Link -->
 <nav>
-<a href="/home/new">Create a New TV Show for Party Potensh to Watch</a>
+<a href="/new">Create a New TV Show for Party Potensh to Watch</a>
 </nav>
 
   </body>

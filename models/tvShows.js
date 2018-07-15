@@ -20,7 +20,13 @@ const tvshowSchema = new mongoose.Schema({
 //this model will be what allows us to talk to mongodb
 //we're saying we want our documents in the database to look like the schema way.
 // mongoose injects your model into mongodb
+
+
 // first argument will be the name of your mongo collection
 // second will be what those documents look like
 //put your 1st argument singular b.c mongoose pluralizes it.
+
 module.exports = mongoose.model('TvShow', tvshowSchema);
+//his TvShow was Fruit
+
+// module.exports = mongoose.model('Fruit', fruitSchema);

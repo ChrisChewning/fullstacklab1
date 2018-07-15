@@ -2,13 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>SHOW PAGE</title>
   </head>
   <body>
-    <h1>Show Page</h1>
-    <form >
-    <!-- <form method="POST" action="">?_method=POST"> -->
-      <input type="submit" value="" />
+    <h1>TV Shows Show Page</h1>
+
+    <h3>TV Show Name: <%= tvshows.name %></h3>
+    <h4>TV Show Reason: <%= tvshows.reason %></h4>
+
+    <% if(tvshows.netflixHulu === true) {%>
+      <span>It is ready to eat</span>
+    <%} else {%>
+      <span>It is not ready to eat</span>
+    <% } %>
+
     </form>
   </body>
 </html>

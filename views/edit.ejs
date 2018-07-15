@@ -5,10 +5,25 @@
     <title></title>
   </head>
   <body>
-    <h1>Edit Page</h1>
-    <form >
-    <!-- <form method="POST" action="">?_method=POST"> -->
-      <input type="submit" value="" />
+    <h1>Edit TV Shows Page</h1>
+
+<!--  look in the database-->
+
+    <form method="POST" action="/<%=tvshows.id%>?_method=PUT">
+      Name: <input type="text" name="name" value="<%=tvshows.name%>"/>
+      <!-- name="name" is important b.c it'll give you something to access through req.body  -->
+      Reason: <input type="text" name="reason" value="<%=tvshows.reason%>"/>
+      Is It On Netflix Or Hulu?:
+      <input type="checkbox" name="netflixHulu"/>
+
+      <% if(tvshows.netflixHulu === true){ %>
+        checked
+      <% } %>
+      >
+      <br/>
+      <input type="submit" value="Submit Changes"/>
     </form>
+      <!-- without the checked attribute you can't check the checkbox. -->
+
   </body>
 </html>
